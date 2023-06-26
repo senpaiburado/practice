@@ -15,12 +15,36 @@ describe Validation do
       expect(Validation.valid_name?('Анна-Марія-Вікторія-Анна')).to eq(true)
     end
 
-    it "Повертає true для невалідного імені (з малої букви)" do
+    it "Повертає false для невалідного імені (з малої букви)" do
       expect(Validation.valid_name?('Анна-Марія-вікторія-Анна')).to eq(false)
     end
 
-    it "Повертає true для невалідного імені (замість дефісу - крапка)" do
+    it "Повертає false для невалідного імені (замість дефісу - крапка)" do
       expect(Validation.valid_name?('Анна.Марія')).to eq(false)
+    end
+
+    it "Повертає false для невалідного імені (нема другого імені, але є дефіс)" do
+      expect(Validation.valid_name?('Анна-')).to eq(false)
+    end
+
+    it "Повертає false для невалідного імені (нема 3 імені, але є дефіс)" do
+      expect(Validation.valid_name?('Анна-Марія-')).to eq(false)
+    end
+    
+    it "Повертає false для невалідного імені (починається з дефісу)" do
+      expect(Validation.valid_name?('-Анна-Марія')).to eq(false)
+    end
+
+    it "Повертає false для невалідного імені (не лише перші літери великі)" do
+      expect(Validation.valid_name?('АнНа-МарІЯ')).to eq(false)
+    end
+
+    it "Повертає false для невалідного імені (не лише перші літери великі 2)" do
+      expect(Validation.valid_name?('ВладИслав')).to eq(false)
+    end
+
+    it "Повертає false для невалідного імені (перша літера не велика)" do
+      expect(Validation.valid_name?('владислав')).to eq(false)
     end
 
     it "Повертає false для невалідного імені" do
