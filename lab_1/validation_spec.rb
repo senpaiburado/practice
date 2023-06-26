@@ -33,8 +33,16 @@ describe Validation do
       expect(Validation.valid_date_of_birth?(Time.new(2000, 01, 01))).to eq(true)
     end
 
+    it "Повертає true для валідної дати народження" do
+      expect(Validation.valid_date_of_birth?(Time.now - 1)).to eq(true)
+    end
+
     it "Повертає false для невалідної дати народження" do
       expect(Validation.valid_date_of_birth?(Time.new(2100, 01, 01))).to eq(false)
+    end
+
+    it "Повертає false для невалідної дати народження" do
+      expect(Validation.valid_date_of_birth?(Time.now + 1)).to eq(false)
     end
   end
 
