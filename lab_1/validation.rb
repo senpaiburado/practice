@@ -8,8 +8,6 @@ module Validation
       end &&
       (name.count('-') == 0 || (name.count('-') > 0 && !name.split('-').last.empty?))
     end
-    
-    
   
     def self.valid_date_of_birth?(dob)
       dob.is_a?(Time) && dob < Time.now
