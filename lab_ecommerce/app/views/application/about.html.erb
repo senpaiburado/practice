@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RubyPhone</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">RubyPhone</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cart">Cart</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+  <h1 class="mb-4">Про нас</h1>
+  <p>
+    Ми - інноваційна компанія, що працює в галузі електроніки. Ми пропонуємо широкий асортимент продуктів, зокрема смартфони, планшети та аксесуари. Наша місія - надавати якісні продукти за доступними цінами.
+  </p>
+  <p>
+    Якщо у вас є питання або пропозиції, будь ласка, зв'яжіться з нами.
+  </p>
+</div>
+
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">&copy; 2023 RubyPhone</span>
+    </div>
+  </footer>
+</body>
+</html>
